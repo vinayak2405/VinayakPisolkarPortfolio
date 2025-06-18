@@ -1,12 +1,10 @@
-import React from 'react';
-
-function ProjectCard({ src, link, h3, p }) {
+function ProjectCard({ src, onClick, h3, p }) {
   return (
-    <a href={link} target="_blank">
+    <div onClick={onClick} style={{ cursor: "pointer" }}>
       <img className="hover" src={src} alt={`${h3} logo`} />
       <h3>{h3}</h3>
-      <p >{p}</p> {/* Directly set width here */}
-    </a>
+      <p>{p}</p>
+    </div>
   );
 }
 
