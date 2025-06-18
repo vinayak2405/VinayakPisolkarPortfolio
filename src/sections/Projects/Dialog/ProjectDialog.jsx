@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import PropTypes from "prop-types";
+import TechChip from "../../CommonComponent/TechChip/TechChip";
+import { techDescriptions } from "../../../utils/constant";
 
 const ProjectDialog = ({ open, onClose, data }) => {
   return (
@@ -80,22 +82,10 @@ const ProjectDialog = ({ open, onClose, data }) => {
           </Typography>
           <Stack direction="column" spacing={1} flexWrap="wrap">
             {data.techStack.map((tech, index) => (
-              <Chip
+              <TechChip
                 key={index}
                 label={tech}
-                variant="outlined"
-                sx={{
-                  color: "#fff",
-                  borderColor: "#fff",
-                  mb: 1,
-                  transition: "all 0.3s ease",
-                  cursor: "pointer",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    boxShadow: "0 0 8px rgba(255, 255, 255, 0.3)",
-                    transform: "scale(1.05)",
-                  },
-                }}
+                info={techDescriptions[tech]}
               />
             ))}
           </Stack>
@@ -171,20 +161,20 @@ const ProjectDialog = ({ open, onClose, data }) => {
           )}
 
           <Typography variant="h6" gutterBottom>
-            Achievements
+            Work Done
           </Typography>
           <ul>
-            {data.achievements.map((item, index) => (
+            {data.workDone.map((item, index) => (
               <li key={index}>
                 <Typography>{item}</Typography>
               </li>
             ))}
           </ul>
 
-          <Typography variant="h6" gutterBottom>
+          {/* <Typography variant="h6" gutterBottom>
             Work Done
           </Typography>
-          <Typography paragraph>{data.work}</Typography>
+          <Typography paragraph>{data.work}</Typography> */}
         </Box>
       </DialogContent>
     </Dialog>

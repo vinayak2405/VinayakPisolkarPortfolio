@@ -1,15 +1,16 @@
 import styles from "./ProjectsStyles.module.css";
-import shipolog from "../../assets/images/shipologUI.png";
+import shipologDashboard from "../../assets/images/shipologDashboard.png";
 import tracking from "../../assets/images/trackingUI.png";
 import plumsense from "../../assets/images/plumsenseUI.png";
 import ProjectCard from "../../common/ProjectCard";
 import ProjectDialog from "./Dialog/ProjectDialog";
 import { useState } from "react";
+import ShipologBasicOverView from "../../assets/videos/ShipologBasicOverView.mp4";
 
 const projectDetails = {
   shipolog: {
     title: "Shipolog",
-    image: shipolog,
+    image: shipologDashboard,
     techStack: [
       "React.js",
       "Redux",
@@ -19,13 +20,17 @@ const projectDetails = {
       "Sequelize",
       "AWS S3",
       "Google Document AI",
+      "Postman",
     ],
-    achievements: [
-      "Reduced label printing time by 50%",
-      "Used by 200+ businesses",
+    workDone: [
+      "Designed and implemented scalable backend services using Node.js, Express.js, PostgreSQL, and Sequelize to deliver high-performance RESTful APIs, ensuring efficient communication between frontend and backend layers.",
+      "Led the development of a full-stack product locking system to maintain order-processing integrity. Implemented access control to prevent simultaneous modifications by users from the same organization, significantly reducing operational conflicts.",
+      "Integrated and trained Google Document AI to automate the extraction of structured label data, including product name, LBH dimensions, tracking numbers, and quantities. This significantly reduced manual labeling effort and improved data accuracy in downstream systems.",
+      "Built complex application modules using Redux Toolkit to streamline state management. This contributed to simplified logic, reduced code redundancy, and improved performance across dynamic workflows.",
+      "Worked with cross-functional teams to deliver features, perform code reviews, and support agile delivery.",
     ],
     work: "Developed UI, integrated APIs, and built shipping flow logic.",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with real video
+    video: ShipologBasicOverView,
   },
   plumsense: {
     title: "Plumsense",
@@ -65,7 +70,7 @@ function Projects() {
         <h1 className="sectionTitle">Projects</h1>
         <div className={styles.projectsContainer}>
           <ProjectCard
-            src={shipolog}
+            src={shipologDashboard}
             onClick={() => handleOpen("shipolog")}
             h3="Shipolog"
             p="AI-Powered Shipping Platform"

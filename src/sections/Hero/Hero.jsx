@@ -24,12 +24,12 @@ function Hero() {
     <section id="hero" className={styles.container}>
       <div className={styles.colorModeContainer}>
         <img src={heroImg} className={styles.hero} alt="Profile picture" />
-        <img
+        {/* <img
           className={styles.colorMode}
           src={themeIcon}
           alt="Color mode icon"
           onClick={toggleTheme}
-        />
+        /> */}
       </div>
       <div className={styles.info}>
         <h1>

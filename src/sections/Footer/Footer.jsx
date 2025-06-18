@@ -1,10 +1,10 @@
-import styles from './FooterStyles.module.css';
+import styles from "./FooterStyles.module.css";
 
 function Footer() {
   return (
     <section id="footer" className={styles.container}>
       <p>
-        &copy; 2024 Vinayak Pisolkar. <br />
+        &copy; 2025 Vinayak Pisolkar. <br />
         All rights reserved.
       </p>
     </section>
