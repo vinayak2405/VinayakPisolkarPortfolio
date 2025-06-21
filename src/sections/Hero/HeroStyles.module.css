@@ -98,3 +98,93 @@
     }
   }
 }
+
+.profileWrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
+}
+
+/* Glowing animated ring 1 */
+.profileWrapper::before,
+.profileWrapper::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 5px #00ffff) drop-shadow(0 0 10px #ff00ff);
+  
+}
+
+.profileWrapper::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff00ff 0deg,
+    #00ffff 120deg,
+    transparent 160deg,
+    transparent 200deg,
+    #ff00ff 240deg
+  );
+  mask: radial-gradient(circle, transparent 108px, black 110px);
+  -webkit-mask: radial-gradient(circle, transparent 108px, black 110px);
+  animation: spin 6s linear infinite;
+  z-index: -1;
+}
+
+
+.profileWrapper::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00ffea 0deg,
+    #ff00aa 120deg,
+    transparent 160deg,
+    transparent 200deg,
+    #00ffea 240deg
+  );
+  mask: radial-gradient(circle, transparent 122px, black 124px);
+  -webkit-mask: radial-gradient(circle, transparent 122px, black 124px);
+  animation: spinReverse 12s linear infinite;
+  z-index: -2;
+}
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
